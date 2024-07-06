@@ -1,0 +1,16 @@
+App --> App.jsx componente raíz
+    Header --> Header.jsx
+        Logo -> Logo.jsx -> <img src="logo.png" alt="logo" />
+        Nav --> <nav><ul><li></li><li></li><li></li><ul></nav>
+
+    Main --> Main.jsx
+        TavelAddForm -> form + input + button
+            
+        TravelList
+            TravelItem -> h3 + img + p
+            TravelItem
+            TravelItem
+            TravelItem
+
+
+    Footer --> Footer.jsx
