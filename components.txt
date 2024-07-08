@@ -4,13 +4,15 @@ App --> App.jsx componente raíz
         Nav --> <nav><ul><li></li><li></li><li></li><ul></nav>
 
     Main --> Main.jsx
-        TavelAddForm -> form + input + button
+        Home
+        About
             
         TravelList
             TravelItem -> h3 + img + p
             TravelItem
             TravelItem
             TravelItem
+        Contact
 
 
     Footer --> Footer.jsx
