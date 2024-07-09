@@ -1,0 +1,35 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+
+
+.home{
+    @include column;
+    align-items: center;
+    gap:32px;
+    
+    &>article{
+        @include column;
+        align-items: center;
+
+        &>div{
+            @include column;
+            gap: 16px;
+        }
+    }
+
+    &>div{
+        @include column;
+        @include shadow($light-blue);
+        border-radius:4px;
+        padding:24px;
+        gap: 16px;
+    }
+
+
+}
+
+.video{
+    width:80vw;
+    height:40vh;
+}

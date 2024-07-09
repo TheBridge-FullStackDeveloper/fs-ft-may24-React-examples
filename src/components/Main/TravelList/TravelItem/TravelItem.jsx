@@ -10,7 +10,7 @@ const TravelItem = ({
   //const {title,desc,img_url} = props.dataItem;
 
   return (
-    <article>
+    <article className="travel-item">
       <h3>Titulo:{title}</h3>
       <p>Descripción:{desc}</p>
       <img src={img_url} alt={title} className="picture_item" />
