@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import TravelItem from "./TravelItem";
+//import TravelItem from "./TravelItem";
+import TravelCard from "./TravelCard/TravelCard.jsx";
 import data from "./data.js"; // carga inicial de datos
 
 const TravelList = () => {
@@ -11,8 +12,8 @@ const TravelList = () => {
   const [values, setValues] = useState({
     title: '',
     desc: '',
-    img_url:''
-});
+    img_url: ''
+  });
 
 
 
@@ -21,7 +22,7 @@ const TravelList = () => {
 
   const renderItems = () =>
     items.map((item, i) => (
-      <TravelItem
+      <TravelCard
         key={uuidv4()}
         dataItem={item}
         deleteCard={() => deleteItem(i)}
@@ -40,7 +41,7 @@ const TravelList = () => {
   };
 
   const editItem = (pos) => {
-    alert("editando item "+pos);
+    alert("editando item " + pos);
     // Lógica para editar un item
   }
 
@@ -52,48 +53,49 @@ const TravelList = () => {
 
     const newItem = { title, desc, img_url };
     console.log(newItem);
-    setItems([...items,newItem]); // Actualizar el estado con el nuevo item
+    setItems([...items, newItem]); // Actualizar el estado con el nuevo item
   }
 
   const handleChange = (e) => {
     setValues({
-        ...values,
-        [e.target.name]: e.target.value
+      ...values,
+      [e.target.name]: e.target.value
     })
-}
+  }
 
   return (
-    <section>
-      <button onClick={clearItems}>Borrar todos</button>
-      <button onClick={resetItems}>Recargar</button>
-      <button onClick={() => deleteItem(1)}>Borrar segundo</button>
-
+    <section className="travel-list">
+      <div>
+        <button onClick={clearItems}>Borrar todos</button>
+        <button onClick={resetItems}>Recargar</button>
+        <button onClick={() => deleteItem(1)}>Borrar segundo</button>
+      </div>
       <form onSubmit={handleSubmit} className="form">
         <div>
           <label htmlFor="name">Título</label>
-          <input type="text" name="title" onChange={handleChange}/>
+          <input type="text" name="title" onChange={handleChange} />
         </div>
 
         <div>
           <label htmlFor="price">Descripción</label>
-          <input type="text" name="desc" onChange={handleChange}/>
+          <input type="text" name="desc" onChange={handleChange} />
         </div>
 
         <div>
           <label htmlFor="url">URL imagen</label>
-          <input type="url" name="img_url" onChange={handleChange}/>
+          <input type="url" name="img_url" onChange={handleChange} />
         </div>
 
         {
-        values.title && values.desc && values.img_url?
-        <button type="submit">Crear destino</button> : 
-        <i>Por favor, rellena todos los campos</i>
+          values.title && values.desc && values.img_url ?
+            <button type="submit">Crear destino</button> :
+            <i>Por favor, rellena todos los campos</i>
         }
 
       </form>
-
-      {renderItems()}
-      
+      <section>
+        {renderItems()}
+      </section>
     </section>
   );
 };

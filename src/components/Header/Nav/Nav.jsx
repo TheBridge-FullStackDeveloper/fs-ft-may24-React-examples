@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import burgerIcon from "../../../assets/burger-icon.png";
+
 const Nav = () => {
+
+
   return (
-    <nav>
+    <nav className="nav">
+      <input type="checkbox" id="menu" />
+      <label htmlFor="menu"><img src={`${burgerIcon}`} alt="burger" width="24px" /></label>
       <ul>
         <li>
           <Link to="/">Home</Link>

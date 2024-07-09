@@ -1,0 +1,34 @@
+@import '../utils/mixins.scss';
+
+.travel-list {
+    @include column;
+    gap:16px;
+
+    &>div {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &>form {
+        @include column;
+        gap:8px;
+        padding:32px 16px;
+        min-width:66%;
+        @include shadow($light-blue);
+
+        &>div{
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+        }
+    }
+
+    &>section{
+        @include column;
+        align-items: center;
+        gap:16px;
+    }
+
+}

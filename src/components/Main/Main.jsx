@@ -9,7 +9,7 @@ import Topic from "./Topic";
 
 const Main = () => {
   return (
-    <main>
+    <main className="main">
       <h1>Mi web de viajes</h1>
       <Routes>
         <Route path="/" element={<Home />} />
