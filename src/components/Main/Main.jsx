@@ -6,6 +6,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Staff from "./Staff";
 import Topic from "./Topic";
+import Subscribe from "./Subscribe";
 
 const Main = () => {
   return (
@@ -18,6 +19,7 @@ const Main = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/staff" element={<Staff />} />
         <Route path="/topic" element={<Topic />} />
+        <Route path="/subscribe" element={<Subscribe />} />
         <Route path="/*" element={<Navigate to={"/"} />} />
       </Routes>
     </main>

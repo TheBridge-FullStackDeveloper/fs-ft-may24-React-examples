@@ -1,7 +1,7 @@
 @import "../utils/variables.scss";
 
 
-.nav{
+%nav{
     width:100%;
 
 
@@ -16,7 +16,6 @@
     &>ul{
         position:absolute;
         left:0;
-        background-color: $light-blue;
         width:100%;
         text-align: center;
         list-style-type: none;
@@ -40,9 +39,23 @@
     }
 }
 
+.nav-day {
+@extend %nav;
+    &>ul{
+        background-color: $blue;
+    }
+}
+
+.nav-night {
+@extend %nav;
+    &>ul{
+        background-color: $dark-blue;
+    }
+}
+
 
 @media only screen and (min-width:$ipad-breakpoint){
-    .nav{
+    %nav{
         &>label{
             display:none;
         }

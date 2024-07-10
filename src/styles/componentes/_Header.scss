@@ -1,9 +1,18 @@
 @import "../utils/variables.scss";
 
-.header {
-    background-color: $blue;
+%header {
     min-height: 5vh;
     display: flex;
     align-items: center;
-
 }
+
+.header-day{
+    @extend %header;
+    background-color: $blue;
+}
+
+.header-night{
+    @extend %header;
+    background-color: $dark-blue;
+}
+
